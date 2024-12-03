@@ -1,3 +1,5 @@
+Repository link: https://github.com/bihunva/chi-articles-management-platform
+
 ## Articles Management Platform
 
 <p>A web application built with Flask for managing users and articles with a secure authentication system and role-based access control</p>
@@ -79,6 +81,14 @@ docker compose up --build
 ```
 docker exec -it flask-app /bin/bash -c "export PYTHONPATH=/app && poetry run python scripts/populate_db.py"
 ```
+
+Credentials:
+```
+Admin: username = password = "admin"
+Editor: username = password = "editor"
+Viewer: username = password = "viewer"
+```
+    
 
 - Run tests for all endpoints with this command:
 
