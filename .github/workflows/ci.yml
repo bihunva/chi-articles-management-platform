@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Create .env file from .env.example
+        run: cp .env.example .env
+
+      - name: Start Docker Compose
+        run: |
+          docker compose up -d
+          sleep 10
+
+      - name: Run tests
+        run: docker compose exec flask-app poetry run pytest -v
+
+      - name: Stop Docker Compose
+        if: always()
+        run: docker compose down
