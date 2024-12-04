@@ -15,7 +15,7 @@ Repository link: https://github.com/bihunva/chi-articles-management-platform
   under the hood.
 - **Flask-JWT-Extended**: JWT-based authentication and authorization.
 - **Flask-Redis**: In-memory database for JWT blacklisting.
-- **PostgreSQL**: Database for file information and user storage.
+- **PostgreSQL**: Database.
 
 **DevOps:**
 
